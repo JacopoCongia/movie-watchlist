@@ -13,7 +13,7 @@ document.addEventListener("click", (e) => {
   if (e.target.dataset.watchlist) {
     addedToWatchlist(e);
     fetch(
-      `http://www.omdbapi.com/?apikey=50a0c6e&i=${e.target.dataset.watchlist}`
+      `https://www.omdbapi.com/?apikey=50a0c6e&i=${e.target.dataset.watchlist}`
     )
       .then((res) => res.json())
       .then((data) => movieArray.push(data))
