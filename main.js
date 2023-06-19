@@ -38,23 +38,34 @@ function handleFormSubmit(e) {
   }
 }
 
-function retrieveMovie(title) {
+async function retrieveMovie(title) {
   const updatedTitle = title.replace(" ", "+");
 
-  fetch(`http://www.omdbapi.com/?apikey=50a0c6e&s=${updatedTitle}`)
-    .then((res) => res.json())
-    .then((data) => {
-      data.Search.map((movie) => {
-        fetch(
-          `http://www.omdbapi.com/?apikey=50a0c6e&t=${movie.Title.replace(
-            /[^A-Z0-9]+/gi,
-            "+"
-          )}`
-        )
-          .then((res) => res.json())
-          .then((data) => setMovieListHtml(data));
-      });
-    });
+  const response = await fetch(
+    `http://www.omdbapi.com/?apikey=50a0c6e&s=${updatedTitle}`
+  );
+  const data = await response.json();
+  const titlesArray = data.Search.map((movie) => {
+    return movie.Title.replace(/[^A-Z0-9]+/gi, "+");
+  });
+
+  const promises = await Promise.all(
+    titlesArray.map(async (title) => {
+      return await fetch(`http://www.omdbapi.com/?apikey=50a0c6e&t=${title}`);
+    })
+  );
+
+  const arrayOfResponses = await Promise.all(
+    promises.map(async (movie) => {
+      return await movie.json();
+    })
+  );
+
+  arrayOfResponses.map((movie) => {
+    if (movie.Title) {
+      setMovieListHtml(movie);
+    }
+  });
 }
 
 function setMovieListHtml(movie) {
