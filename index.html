@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Movie Watchlist</title>
+  </head>
+  <body>
+    <header
+      id="header"
+      class="header"
+    >
+      <div
+        id="header-container"
+        class="header-container"
+      >
+        <h1
+          id="header-container title"
+          class="header-container-title"
+        >
+          Find your film
+        </h1>
+        <a
+          id="header-container-watchlist"
+          class="header-container-watchlist"
+          href="./watchlist.html"
+        >
+          My Watchlist
+        </a>
+      </div>
+      <form
+        id="search-bar"
+        class="search-bar"
+      >
+        <input
+          id="search"
+          class="search"
+          type="search"
+          placeholder="Search for a movie"
+        />
+        <button
+          id="search-btn"
+          class="search-btn"
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
+    </header>
+    <div
+      class="start-exploring"
+      id="start-exploring"
+    >
+      <img
+        class="start-exploring-icon"
+        src="/start-exploring.png"
+        alt="A minimalist style film reel that says Start Exploring"
+      />
+    </div>
+    <section
+      id="content"
+      class="content"
+    >
+      <!-- Film List Here -->
+    </section>
+    <script
+      type="module"
+      src="/main.js"
+    ></script>
+  </body>
+</html>

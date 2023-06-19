@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Movie Watchlist</title>
+  </head>
+  <body>
+    <header
+      id="header"
+      class="header"
+    >
+      <div
+        id="header-container"
+        class="header-container"
+      >
+        <h1
+          id="header-container title"
+          class="header-container-title"
+        >
+          My Watchlist
+        </h1>
+        <a
+          id="header-container-watchlist"
+          class="header-container-watchlist"
+          href="/"
+        >
+          Search for movies
+        </a>
+      </div>
+    </header>
+    <div
+      class="nothing-here-yet"
+      id="nothing-here-yet"
+    >
+      <h1>Your watchlist is looking a little empty...</h1>
+      <div>
+        <p>Why don't you add some movies to the list?</p>
+        <a href="/">
+          <img
+            class="add-to-list-icon"
+            src="/add.png"
+          />
+        </a>
+      </div>
+    </div>
+    <section
+      id="content"
+      class="content"
+    >
+      <!-- Film List Here -->
+    </section>
+    <script
+      type="module"
+      src="/watchlist.js"
+    ></script>
+  </body>
+</html>
