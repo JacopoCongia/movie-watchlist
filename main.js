@@ -42,7 +42,7 @@ async function retrieveMovie(title) {
   const updatedTitle = title.replace(" ", "+");
 
   const response = await fetch(
-    `http://www.omdbapi.com/?apikey=50a0c6e&s=${updatedTitle}`
+    `https://www.omdbapi.com/?apikey=50a0c6e&s=${updatedTitle}`
   );
   const data = await response.json();
   const titlesArray = data.Search.map((movie) => {
@@ -51,7 +51,7 @@ async function retrieveMovie(title) {
 
   const promises = await Promise.all(
     titlesArray.map(async (title) => {
-      return await fetch(`http://www.omdbapi.com/?apikey=50a0c6e&t=${title}`);
+      return await fetch(`https://www.omdbapi.com/?apikey=50a0c6e&t=${title}`);
     })
   );
 
