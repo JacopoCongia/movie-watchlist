@@ -45,6 +45,7 @@ async function retrieveMovie(title) {
     `https://www.omdbapi.com/?apikey=50a0c6e&s=${updatedTitle}`
   );
   const data = await response.json();
+
   const titlesArray = data.Search.map((movie) => {
     return movie.Title.replace(/[^A-Z0-9]+/gi, "+");
   });
