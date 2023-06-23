@@ -36,8 +36,8 @@ a {
 .movie-result-header,
 .movie-result-details,
 .movie-result-watchlist-add,
-.nothing-here-yet,
-.nothing-here-yet div,
+.watchlist-empty-container,
+.watchlist-empty-subtitle-container,
 .start-exploring {
   display: flex;
 }
@@ -94,8 +94,8 @@ a {
   justify-content: center;
   position: absolute;
   top: 91%;
-  left: 50%;
-  margin-left: -165px;
+  left: 0;
+  right: 0;
 }
 
 .search,
@@ -215,36 +215,44 @@ img {
   line-height: 20px;
 }
 
-.nothing-here-yet {
-  flex-direction: column;
-  color: black;
-  align-items: center;
-  padding: 5em 2em;
-  gap: 1em;
-  font-size: 1.125rem;
-  color: #c4c4c4;
-  text-align: center;
-}
-.nothing-here-yet .nothing-here-yet div {
-  align-items: center;
-  gap: 1em;
-  font-weight: bold;
-  font-size: 0.875rem;
-  color: black;
-}
-
-.nothing-here-yet img {
-  width: 18px;
-}
-
-.nothing-here-yet a {
-  cursor: pointer;
-}
-
 .start-exploring {
   width: 100%;
   align-items: center;
   justify-content: center;
+}
+
+.watchlist-empty-container {
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 5em 2em;
+  color: #c4c4c4;
+  gap: 1.5em;
+}
+
+.watchlist-empty-title {
+  line-height: 1.2em;
+}
+
+.watchlist-empty-subtitle-container {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.watchlist-empty-subtitle {
+  color: #555555;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.watchlist-empty-container a {
+  cursor: pointer;
+}
+
+.add-to-list-icon {
+  width: 50px;
+  height: 50px;
 }
 
 .hide-content {
